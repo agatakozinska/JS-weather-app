@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display: 400|Raleway: 400" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="main.css">
+  <title>Weather app</title>
+</head>
+
+<body>
+
+  <main id="app">
+    <div class="header">
+      <h1 class="header__title">Weather app</h1>
+      <img class="header__image" src="undraw_weather.svg" alt="">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="search input-group">
+          <input type="text" class="search__input form-control" placeholder="City" aria-label="City" aria-describedby="search__button">
+          <div class="input-group-append">
+            <button class="search__button btn" id="search__button" type="submit">Search</button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="location col-10 offset-1">
+          <h2 class="location-city">Poznań</h2>
+          <p class="location-country">Polska</p>
+        </div>
+        <div class="weather col-10 offset-1">
+          <h3 class="weather-temperature">20°</h3>
+          <div class="weather-description">
+            <img class="weather-icon" src="" alt="">
+            <p>Clear</p>
+          </div>
+        </div>
+        <div class="weather-conditions col-10 offset-1">
+          <div class="weather-conditions__wrapper">
+            <h4 class="weather-conditions__title">Wind</h4>
+            <p>5 km/h</p>
+          </div>
+          <div class="weather-conditions__wrapper">
+            <h4 class="weather-conditions__title">Humidity</h4>
+            <p>60%</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+
+</html>
