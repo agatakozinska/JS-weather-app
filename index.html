@@ -15,24 +15,39 @@
 <body>
 
   <main id="app">
-    <div class="header">
+    <div class="header container">
       <h1 class="header__title">Weather app</h1>
       <img class="header__image" src="undraw_weather.svg" alt="">
     </div>
-    <div class="container">
+    <div class="search container">
       <div class="row">
-        <div class="search input-group">
+        <form class="input-group">
           <input type="text" class="search__input form-control" placeholder="City" aria-label="City" aria-describedby="search__button">
           <div class="input-group-append">
             <button class="search__button btn" id="search__button" type="submit">Search</button>
           </div>
+        </form>
+      </div>
+    </div>
+    <div class="app-message">
+      <div class="app-message__content card container">
+        <div class="card-body">
+          <p class="card-text"></p>
+          <a href="#" class="app-message__button btn btn-primary">OK</a>
         </div>
       </div>
+    </div>
+    <div class="app-results container">
       <div class="row">
-        <div class="location col-10 offset-1">
+        <div class="location col-6 offset-1">
           <h2 class="location-city">Poznań</h2>
           <p class="location-country">Polska</p>
         </div>
+        <div class="date col-4">
+          <p>Mon 4.03</p>
+        </div>
+      </div>
+      <div class="row">
         <div class="weather col-10 offset-1">
           <h3 class="weather-temperature">20°</h3>
           <div class="weather-description">
@@ -51,8 +66,8 @@
           </div>
         </div>
       </div>
-
     </div>
+
   </main>
   <script src="app.js"></script>
 </body>

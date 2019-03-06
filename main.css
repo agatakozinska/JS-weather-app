@@ -19,10 +19,13 @@ body {
   background-image: radial-gradient(circle, #2fcaeb, #29b6d6, #23a2c1, #1d8fad, #177c98);
   font-family: 'Raleway', sans-serif;
   color: var(--white);
-  max-width: 500px;
   height: 100vh;
   padding-bottom: 50px;
   margin: 0 auto;
+}
+
+.container {
+  max-width: 500px;
 }
 
 .header {
@@ -47,31 +50,64 @@ body {
   right: 28px;
 }
 
-.search {
+.input-group {
   width: 90%;
   margin: 0 auto;
   padding-bottom: 30px;
 }
 
-.search__button {
+.search__button, .app-message__button {
   transition: all .3s ease-in-out;
   background-color: var(--violet);
   color: var(--white);
+  border-color: transparent;
+  outline-color: var(--violet);
 }
 
-.search__button:hover {
+.search__button:hover, .app-message__button:hover {
   background-color: var(--light-violet);
   color: var(--white);
+  border-color: transparent;
 }
 
-.location, .weather, .weather-conditions {
+.app-message__button {
+  float: right;
+}
+
+.app-message {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.2);
+}
+
+.app-message__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 400px;
+  color: var(--marine);
+}
+
+.app-results {
+  display: none;
   text-shadow: 1px 1px 1px var(--marine);
 }
 
-.location-country {
+.location-country, .date {
   font-size: 12px;
   letter-spacing: 2px;
   text-transform: uppercase;
+}
+
+.date {
+  text-align: right;
+  padding-top: 43px;
 }
 
 .weather {
