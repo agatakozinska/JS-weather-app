@@ -1,40 +1,18 @@
-import 'normalize.css/normalize.css';
+require('normalize.css/normalize.css');
 import './main.scss';
 import "@babel/polyfill";
+import showMessage from './js/popup';
+import Weather from './js/weather-api';
+import Display from './js/display';
 
-class Weather {
-  constructor() {
-    this.apiKey = '939066545737221c97315f84af3cde4f';
-  }
-  async getWeather(city) {
-    const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${this.apiKey}`;
-    try {
-      const resp = await fetch(url);
-      const data = await resp.json();
-      //display message when a city is not found
-      if (data.cod == 404) {
-        showMessage('Something went wrong...' + data.message);
-      } else {
-        return data;
-      }
-    } catch (err) {
-      console.log(`fetch failed: ${err}`);
-    }
-  }
-}
-
+const weatherData = new Weather();
+const displayData = new Display();
 
 const popup = document.querySelector('.app-message');
 const submitButton = document.querySelector('.input-group');
 
-const showMessage = (text) => {
-  const popupText = document.querySelector('.card-text');
-  popup.style.display = 'block';
-  popupText.textContent = text;
-}
-
 popup.addEventListener('click', e => {
-  if (e.target.classList != "card-body" && e.target.classList != "card-text") {
+  if (e.target.classList != 'card-body' && e.target.classList != 'card-text') {
     popup.style.display = 'none';
   }
 })
@@ -47,10 +25,10 @@ submitButton.addEventListener('submit', e => {
   if (city === '') {
     showMessage('First, you have to type a city :)');
   } else {
-    const weatherData = new Weather();
+    
     weatherData.getWeather(city)
       .then(data => {
-        console.log(data);
+        displayData.weatherData(data);
       })
       .catch(err => console.error(err));
   }
