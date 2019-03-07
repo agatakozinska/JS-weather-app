@@ -1,24 +1,23 @@
-:root {
-  --background: #70C3EE;
-  --white: #fff;
-  --light-blue: #DDEDFB;
-  --yellow: #FFC06A;
-  --light-yellow: #FFD381;
-  --gray: #B8BEDD;
-  --marine: #004F74;
-  --light-violet: rgb(106, 101, 207);
-  --violet: rgb(105, 98, 173);
-}
+//variables
+  $background: #70C3EE;
+  $white: #fff;
+  $light-blue: #DDEDFB;
+  $yellow: #FFC06A;
+  $light-yellow: #FFD381;
+  $gray: #B8BEDD;
+  $marine: #004F74;
+  $light-violet: rgb(106, 101, 207);
+  $violet: rgb(105, 98, 173);
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  background-color: var(--background);
+  background-color: $background;
   background-image: radial-gradient(circle, #2fcaeb, #29b6d6, #23a2c1, #1d8fad, #177c98);
   font-family: 'Raleway', sans-serif;
-  color: var(--white);
+  color: $white;
   height: 100vh;
   padding-bottom: 50px;
   margin: 0 auto;
@@ -31,23 +30,24 @@ body {
 .header {
   position: relative;
   padding-top: 45px;
-}
 
-.header__title {
-  font-family: 'Playfair Display', serif;
-  font-size: 42px;
-  text-align: center;
-  width: 100%;
-  color: var(--marine);
-  padding: 30px 30px 10px 30px;
-}
+  &__title {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    text-align: center;
+    width: 100%;
+    color: $marine;
+    margin: 0;
+    padding: 30px 30px 10px 30px;
+  }
 
-.header__image {
-  max-width: 140px;
-  position: absolute;
-  z-index: -1;
-  top: 5px;
-  right: 28px;
+  &__image {
+    max-width: 140px;
+    position: absolute;
+    z-index: -1;
+    top: 5px;
+    right: 28px;
+  }
 }
 
 .input-group {
@@ -58,22 +58,17 @@ body {
 
 .search__button, .app-message__button {
   transition: all .3s ease-in-out;
-  background-color: var(--violet);
-  color: var(--white);
+  background-color: $violet;
+  color: $white;
   border-color: transparent;
-  outline-color: var(--violet);
-}
+  outline-color: $violet;
 
-.search__button:hover, .app-message__button:hover {
-  background-color: var(--light-violet);
-  color: var(--white);
-  border-color: transparent;
+  &:hover {
+    background-color: $light-violet;
+    color: $white;
+    border-color: transparent;
+  }
 }
-
-.app-message__button {
-  float: right;
-}
-
 .app-message {
   display: none;
   width: 100%;
@@ -83,20 +78,24 @@ body {
   top: 0;
   left: 0;
   background-color: rgba(0,0,0,0.2);
-}
 
-.app-message__content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 400px;
-  color: var(--marine);
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 400px;
+    color: $marine;
+  }
+
+  &__button {
+    float: right;
+  }
 }
 
 .app-results {
   display: none;
-  text-shadow: 1px 1px 1px var(--marine);
+  text-shadow: 1px 1px 1px $marine;
 }
 
 .location-country, .date {
@@ -112,7 +111,7 @@ body {
 
 .weather {
   text-align: center;
-  border-bottom: 1px solid var(--light-blue);
+  border-bottom: 1px solid $light-blue;
   padding-bottom: 20px;
 }
 
@@ -137,15 +136,15 @@ body {
 @media (min-width: 576px) {
   .header {
     padding-top: 65px;
-  }
-  
-  .header__title {
-    font-size: 48px;
-    padding: 30px 30px 15px 30px;
-  }
 
-  .header__image {
-    max-width: 170px;
-    right: 40px;
+    &__title {
+      font-size: 48px;
+      padding: 30px 30px 15px 30px;
+    }
+
+    &__image {
+      max-width: 170px;
+      right: 40px;
+    }
   }
 }

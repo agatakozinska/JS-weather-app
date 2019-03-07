@@ -1,13 +1,22 @@
+import 'normalize.css/normalize.css';
+import './main.scss';
+import "@babel/polyfill";
+
 class Weather {
   constructor() {
     this.apiKey = '939066545737221c97315f84af3cde4f';
   }
   async getWeather(city) {
+    const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${this.apiKey}`;
     try {
-      const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${this.apiKey}`;
       const resp = await fetch(url);
       const data = await resp.json();
-      return data;
+      //display message when a city is not found
+      if (data.cod == 404) {
+        showMessage('Something went wrong...' + data.message);
+      } else {
+        return data;
+      }
     } catch (err) {
       console.log(`fetch failed: ${err}`);
     }
@@ -39,6 +48,10 @@ submitButton.addEventListener('submit', e => {
     showMessage('First, you have to type a city :)');
   } else {
     const weatherData = new Weather();
-    weatherData.getWeather(city).then(data => console.log(data));
+    weatherData.getWeather(city)
+      .then(data => {
+        console.log(data);
+      })
+      .catch(err => console.error(err));
   }
 })

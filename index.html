@@ -8,7 +8,6 @@
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display: 400|Raleway: 400" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
     crossorigin="anonymous">
-  <link rel="stylesheet" href="main.css">
   <title>Weather app</title>
 </head>
 
@@ -17,7 +16,8 @@
   <main id="app">
     <div class="header container">
       <h1 class="header__title">Weather app</h1>
-      <img class="header__image" src="undraw_weather.svg" alt="">
+      <img class="header__image" src="<%= require('./src/img/undraw_weather.svg') %>" alt="" />
+      
     </div>
     <div class="search container">
       <div class="row">
@@ -69,7 +69,6 @@
     </div>
 
   </main>
-  <script src="app.js"></script>
 </body>
 
 </html>
