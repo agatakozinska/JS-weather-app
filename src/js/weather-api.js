@@ -5,7 +5,7 @@ export default class Weather {
 		this.apiKey = '939066545737221c97315f84af3cde4f';
 	}
 	async getWeather(city) {
-		const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${this.apiKey}`;
+		const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${this.apiKey}&units=metric`;
 		try {
 			const resp = await fetch(url);
 			const data = await resp.json();

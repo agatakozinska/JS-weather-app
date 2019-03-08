@@ -125,6 +125,10 @@ body {
   font-size: 18px;
 }
 
+.weather-description__icon {
+  max-width: 100px;
+}
+
 .weather-conditions {
   display: flex;
   justify-content: space-evenly;
