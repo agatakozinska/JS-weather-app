@@ -26,11 +26,12 @@ submitButton.addEventListener('submit', e => {
 	if (city === '') {
 		showMessage('First, you have to type a city :)');
 	} else {
-
 		weatherData.getWeather(city)
 			.then(data => {
 				displayData.weatherData(data);
 			})
 			.catch(err => console.error(err));
 	}
+	//reset input
+	document.forms[0].reset();
 });
