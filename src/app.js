@@ -1,3 +1,4 @@
+//eslint-disable-next-line
 require('normalize.css/normalize.css');
 import './main.scss';
 import '@babel/polyfill';
@@ -7,11 +8,8 @@ import Display from './js/display';
 
 const weatherData = new Weather();
 const displayData = new Display();
-
 const popup = document.querySelector('.app-message');
 const submitButton = document.querySelector('.input-group');
-
-
 
 
 popup.addEventListener('click', e => {

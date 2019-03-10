@@ -122,11 +122,28 @@ body {
 .weather-description {
   display: flex;
   justify-content: center;
+  align-items: center;
   font-size: 18px;
+
+  &__text {
+    width: 50%;
+    text-align: left;
+    padding-left: 25px;
+  }
+}
+
+@keyframes icon {
+    0% {
+        transform: scale(1.0);
+    }
+    100% {
+        transform: scale(1.1);
+    }
 }
 
 .weather-description__icon {
-  max-width: 100px;
+  max-width: 70px;
+  animation: icon 2s ease-in-out infinite alternate;
 }
 
 .weather-conditions {
