@@ -34,12 +34,11 @@ export default class DisplayData {
 		//date
 		let today = (new Date()).toString().split(' ').splice(0,3);
 		const day = today.shift();
-		const date = today.reverse();
-		today = [day, [...date].join(' ')];
+		const date = today.reverse().join(' ');
+		today = [day, date];
 
 		this.icon.src = src;
 		this.date.textContent = today;
-		this.results.style.display = 'flex';
 		this.city.textContent = name;
 		this.country.textContent = `(${country})`;
 		this.description.textContent = description;

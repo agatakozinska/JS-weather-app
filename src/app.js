@@ -13,7 +13,7 @@ const submitButton = document.querySelector('.input-group');
 
 
 popup.addEventListener('click', e => {
-	if (e.target.classList != 'card-body' && e.target.classList != 'card-text') {
+	if (e.target.classList !== 'card-body' && e.target.classList !== 'card-text') {
 		popup.style.display = 'none';
 	}
 });
@@ -22,6 +22,7 @@ submitButton.addEventListener('submit', e => {
 	e.preventDefault();
 	const searchInput = document.querySelector('.search__input');
 	const city = searchInput.value;
+	const results = document.querySelector('.app-results');
 
 	if (city === '') {
 		showMessage('First, you have to type a city :)');
@@ -29,6 +30,7 @@ submitButton.addEventListener('submit', e => {
 		weatherData.getWeather(city)
 			.then(data => {
 				displayData.weatherData(data);
+				results.style.display = 'flex';
 			})
 			.catch(err => console.error(err));
 	}
